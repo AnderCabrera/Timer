@@ -1,0 +1,15 @@
+body {
+  background-color: #2a044d;
+}
+
+header {
+  background-color: #242424;
+  padding: 15px;
+}
+
+header h1 {
+  font: 30px "Poppins", sans-serif;
+  color: #fff;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
