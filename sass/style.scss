@@ -1,18 +1,18 @@
 $font: 'Poppins', sans-serif;
-$background: rgb(42, 4, 77);
-$second-background: rgb(36, 36, 36);
+$purple-background: rgb(42, 4, 77);
+$gray-background: rgb(36, 36, 36);
 
 /* ------------------- */
 /* Global */
 /* -------------------*/
 
 body {
-  background-color: $background;
+  background-color: $purple-background;
 }
 
 .header {
-  background-color: $second-background;
-  padding: 15px;
+  background-color: $gray-background;
+  padding: 25px;
 }
 
 .header-h1 {
@@ -20,3 +20,22 @@ body {
   color: #fff;
   text-align: center;
 }
+
+/* ------------------- */
+/* Main */
+/* -------------------*/
+
+
+
+/* ------------------- */
+/* footer */
+/* -------------------*/
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  background-color: $gray-background;
+  width: 100vw;
+  padding-bottom: 120px;
+}
+

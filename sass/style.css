@@ -1,15 +1,32 @@
+/* ------------------- */
+/* Global */
+/* -------------------*/
 body {
   background-color: #2a044d;
 }
 
-header {
+.header {
   background-color: #242424;
-  padding: 15px;
+  padding: 25px;
 }
 
-.header .header-h1 {
+.header-h1 {
   font: 30px "Poppins", sans-serif;
   color: #fff;
   text-align: center;
+}
+
+/* ------------------- */
+/* Main */
+/* -------------------*/
+/* ------------------- */
+/* footer */
+/* -------------------*/
+.footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #242424;
+  width: 100vw;
+  padding-bottom: 120px;
 }
 /*# sourceMappingURL=style.css.map */
