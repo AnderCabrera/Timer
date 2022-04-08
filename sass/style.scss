@@ -2,19 +2,21 @@ $font: 'Poppins', sans-serif;
 $background: rgb(42, 4, 77);
 $second-background: rgb(36, 36, 36);
 
+/* ------------------- */
+/* Global */
+/* -------------------*/
+
 body {
   background-color: $background;
 }
 
-header {
+.header {
   background-color: $second-background;
   padding: 15px;
 }
 
-header {
-  h1 {
-    font: 30px $font;
-    color: #fff;
-    text-align: center;
-  }
+.header-h1 {
+  font: 30px $font;
+  color: #fff;
+  text-align: center;
 }
