@@ -10,7 +10,7 @@ body {
   padding: 25px;
 }
 
-.header-h1 {
+.header__h1 {
   font: 30px "Poppins", sans-serif;
   color: #fff;
   text-align: center;
@@ -28,5 +28,18 @@ body {
   background-color: #242424;
   width: 100vw;
   padding-bottom: 120px;
+}
+
+.footer .footer__img-1 {
+  width: 155px;
+  height: 155px;
+  float: left;
+  margin: 0px;
+}
+
+.footer .footer__img-2 {
+  width: 155px;
+  height: 155px;
+  float: right;
 }
 /*# sourceMappingURL=style.css.map */

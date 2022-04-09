@@ -15,7 +15,7 @@ body {
   padding: 25px;
 }
 
-.header-h1 {
+.header__h1 {
   font: 30px $font;
   color: #fff;
   text-align: center;
@@ -37,5 +37,21 @@ body {
   background-color: $gray-background;
   width: 100vw;
   padding-bottom: 120px;
+  
+  @mixin logo-sizes {
+      width: 155px;
+      height: 155px;
+  } 
+  
+  .footer__img-1 {
+    @include logo-sizes;
+    float: left;
+    margin: 0px;
+  }
+
+  .footer__img-2 {
+    @include logo-sizes;
+    float: right;
+  }
 }
 
