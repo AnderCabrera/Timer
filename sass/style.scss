@@ -28,6 +28,64 @@ body {
 /* Main */
 /* -------------------*/
 
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #141414;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: .3s ease all;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.main__h2,
+.button {
+  display: block;
+  border: thin solid black;
+  width: 90px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.main__button-1 {
+  position: relative;
+  top: 3rem;
+  left: 25vw
+}
+
+.main__button-2 {
+  position: relative;
+  bottom: 3rem;
+  right: 25vw;
+}
+
+.button:disabled {
+  background: #8293F8
+}
+
+// .button::after {
+//   content: "";
+//   width: 100%;
+//   position: absolute;
+//   z-index: 1;
+//   top: 0;
+//   left: calc(-100% - 80px);
+//   border-bottom: 80px solid #286cff;
+//   border-right: 80px solid transparent;
+//   transition: .4s ease-in-out all;
+// }
+
+// .button:hover::after {
+//   left: 0;
+// }
+
 
 /* ------------------- */
 /* footer */
