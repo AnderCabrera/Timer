@@ -31,12 +31,16 @@ document.addEventListener('DOMContentLoaded', function () {
     startBtn.disabled = true;
     stopBtn.disabled = false;
     startBtn.innerText = 'Start';
+    startBtn.style.display = 'none';
+    stopBtn.style.display = 'block';
     counter = setInterval(() => {
       if (count === 0) {
         addBtn.disabled = false;
         substractBtn.disabled = false;
         startBtn.disabled = false;
         stopBtn.disabled = true;
+        startBtn.innerText = 'Start';
+        startBtn.style.display = 'block';
         clearInterval(counter);
       } else {
         count--;
@@ -56,6 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
       addBtn.disabled = false;
       substractBtn.disabled = false;
       startBtn.innerText = 'Reanudar';
+      startBtn.style.display = 'block';
+      stopBtn.style.display = 'none';
     }
   }
 
