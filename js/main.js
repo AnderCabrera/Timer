@@ -1,40 +1,60 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const addButton = document.querySelector('.main__button-1');
-  const removeButton = document.querySelector('.main__button-2');
-  const mainH2 = document.querySelector('.main__h2');
-  const startButton = document.querySelector('.main__button-3');
-  let contador = 0;
-  mainH2.textContent = `${contador} min`;
+  const number = document.getElementById('main__h2')
+  const addBtn = document.getElementById('main__button-1');
+  const substractBtn = document.getElementById('main__button-2');
+  const startBtn = document.getElementById('main__button-3');
+  const stopBtn = document.getElementById('main__button-4');
 
-  const add = () => {
-    contador += 5;
-    mainH2.textContent = `${contador} min`;
-  };
+  let pause = false;
+  let count = 0;
 
-  const substract = () => {
-    contador -= 5;
-    if (contador < 0) contador = 0;
-    mainH2.textContent = `${contador} min`;
-  };
 
-  const start = () => {
-    addButton.disabled = true;
-    removeButton.disabled = true;
-    const interval = setInterval(() => {
-      if (contador === 0) {
-        clearInterval(interval);
-        addButton.disabled = false;
-        removeButton.disabled = false;
+  number.innerText = `${count} seg`;
+
+  addBtn.onclick = () => {
+    count += 5;
+    number.innerText = `${count} seg`;
+  }
+
+  substractBtn.onclick = () => {
+    count -= 5;
+    number.innerText = `${count} seg`;
+    if (count < 0) {
+      count = 0;
+      number.innerText = `${count} seg`;
+    }
+  }
+
+    startBtn.onclick = () => {
+    addBtn.disabled = true;
+    substractBtn.disabled = true;
+    startBtn.disabled = false;
+    stopBtn.disabled = false;
+    counter = setInterval(() => {
+      if (count === 0) {
+        addBtn.disabled = false;
+        substractBtn.disabled = false;
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
+        clearInterval(counter);
       } else {
-        contador -= 1;
-        mainH2.textContent = `${contador} min`;
+        count--;
+        number.innerText = `${count} seg`;
       }
     }, 1000);
-  };
+  }
 
+  stopBtn.disabled = true;
+  stopBtn.onclick = () => {
+    pause = !pause;
+    if (pause) {
+      clearInterval(counter);
+      stopBtn.innerText = 'Reanudar';
+    } else {
+      counter = setInterval(startBtn.onclick, 1000);
+      stopBtn.innerText = 'Stop';
+    }
+  }
 
-  addButton.addEventListener('click', add);
-  removeButton.addEventListener('click', substract);
-  startButton.addEventListener('click', start);
 
 })

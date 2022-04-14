@@ -43,7 +43,9 @@ body {
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  margin-top: 12px;
 }
+
 .main__h2,
 .button {
   display: block;
@@ -51,8 +53,8 @@ body {
   width: 90px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
-
 
 .main__button-1 {
   position: relative;
@@ -67,7 +69,7 @@ body {
 }
 
 .button:disabled {
-  background: #8293F8
+  opacity: 0.5;
 }
 
 // .button::after {
@@ -121,8 +123,8 @@ body {
 /* -------------------*/
 
 @mixin logo-sizes {
-  width: 5em;
-  height: 5em;
+  width: 4.2em;
+  height: 4.2em;
 } 
 
 @mixin footer-container {
