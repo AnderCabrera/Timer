@@ -25,11 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-    startBtn.onclick = () => {
+  startBtn.onclick = () => {
     addBtn.disabled = true;
     substractBtn.disabled = true;
-    startBtn.disabled = false;
+    startBtn.disabled = true;
     stopBtn.disabled = false;
+    startBtn.innerText = 'Start';
     counter = setInterval(() => {
       if (count === 0) {
         addBtn.disabled = false;
@@ -49,10 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
     pause = !pause;
     if (pause) {
       clearInterval(counter);
-      stopBtn.innerText = 'Reanudar';
-    } else {
-      counter = setInterval(startBtn.onclick, 1000);
-      stopBtn.innerText = 'Stop';
+      stopBtn.innerText = 'Pause';
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+      addBtn.disabled = false;
+      substractBtn.disabled = false;
+      startBtn.innerText = 'Reanudar';
     }
   }
 
