@@ -1,7 +1,7 @@
-$font: 'Poppins', sans-serif;
+$font: "Poppins", sans-serif;
 $white-color: rgb(255, 255, 255);
-$purple-background: #2666CF;
-$gray-background: #2C3333;
+$purple-background: #2666cf;
+$gray-background: #2c3333;
 
 /* ------------------- */
 /* Global */
@@ -39,7 +39,7 @@ body {
   border: none;
   cursor: pointer;
   text-transform: uppercase;
-  transition: .3s ease all;
+  transition: 0.3s ease all;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -48,26 +48,71 @@ body {
 .button {
   display: block;
   border: thin solid black;
-  width: 90px;
+  width: 3ch;
   margin-left: auto;
   margin-right: auto;
 }
 
-
-.main__button-1 {
-  position: relative;
-  top: 3rem;
-  left: 25vw
+.main__h2 {
+  width: 10ch;
 }
 
-.main__button-2 {
+.main__button-addHour {
+  position: relative;
+  top: 3rem;
+  left: 25vw;
+}
+
+.main__button-subsHour {
   position: relative;
   bottom: 3rem;
   right: 25vw;
 }
 
+.main__button-addMin {
+  position: relative;
+  top: 3rem;
+  left: 25vw;
+}
+
+.main__button-subsMin {
+  position: relative;
+  bottom: 3rem;
+  right: 25vw;
+}
+
+.main__button-addSec {
+  position: relative;
+  top: 3rem;
+  left: 25vw;
+}
+
+.main__button-subsSec {
+  position: relative;
+  bottom: 3rem;
+  right: 25vw;
+}
+
+.main__button-start,
+.main__button-reset,
+.main__button-stop {
+  width: 7ch;
+}
+
+.main__button-reset {
+  position: relative;
+  bottom: 1.7rem;
+  right: 11.5vw;
+}
+
+.main__button-stop {
+  position: relative;
+  bottom: 3.3rem;
+  left: 11.5vw;
+}
+
 .button:disabled {
-  background: #8293F8
+  background: #8293f8;
 }
 
 // .button::after {
@@ -85,7 +130,6 @@ body {
 // .button:hover::after {
 //   left: 0;
 // }
-
 
 /* ------------------- */
 /* footer */
@@ -123,7 +167,7 @@ body {
 @mixin logo-sizes {
   width: 5em;
   height: 5em;
-} 
+}
 
 @mixin footer-container {
   display: flex;
@@ -148,7 +192,7 @@ body {
     position: absolute;
     top: 0;
   }
-  
+
   .footer__img-1 {
     @include logo-sizes;
     position: relative;
@@ -169,7 +213,7 @@ body {
     position: absolute;
     top: 0;
   }
-  
+
   .footer__img-2 {
     @include logo-sizes;
     position: relative;
@@ -177,4 +221,3 @@ body {
     margin-left: 10px;
   }
 }
-

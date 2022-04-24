@@ -1,40 +1,71 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const addButton = document.querySelector('.main__button-1');
-  const removeButton = document.querySelector('.main__button-2');
-  const mainH2 = document.querySelector('.main__h2');
-  const startButton = document.querySelector('.main__button-3');
-  let contador = 0;
-  mainH2.textContent = `${contador} min`;
+document.addEventListener("DOMContentLoaded", () => {
+  const addButtonHour = document.querySelector(".main__button-addHour");
+  const addButtonMin = document.querySelector(".main__button-addMin");
+  const addButtonSec = document.querySelector(".main__button-addSec");
+  const removeButtonHour = document.querySelector(".main__button-subsHour");
+  const removeButtonMin = document.querySelector(".main__button-subsMin");
+  const removeButtonSec = document.querySelector(".main__button-subsSec");
+  const mainH2 = document.querySelector(".main__h2");
+  const startButton = document.querySelector(".main__button-start");
+  const resetButton = document.querySelector(".main__button-reset");
+  const stopButton = document.querySelector(".main__button-stop");
 
-  const add = () => {
-    contador += 5;
-    mainH2.textContent = `${contador} min`;
+  let time = 0;
+  let timer;
+
+  const updatePomodoro = () => {
+    const hours = String(Math.trunc(time / 60 / 60)).padStart(2, 0);
+    const min = String(Math.trunc((time / 60) % 60)).padStart(2, 0);
+    const sec = String(time % 60).padStart(2, 0);
+
+    mainH2.textContent = `${hours}:${min}:${sec}`;
   };
 
-  const substract = () => {
-    contador -= 5;
-    if (contador < 0) contador = 0;
-    mainH2.textContent = `${contador} min`;
-  };
+  const startCount = () => {
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => {
+      updatePomodoro();
+      if (time === 0) clearInterval(timer);
 
-  const start = () => {
-    addButton.disabled = true;
-    removeButton.disabled = true;
-    const interval = setInterval(() => {
-      if (contador === 0) {
-        clearInterval(interval);
-        addButton.disabled = false;
-        removeButton.disabled = false;
-      } else {
-        contador -= 1;
-        mainH2.textContent = `${contador} min`;
-      }
+      time -= 1;
     }, 1000);
+
+    return timer;
   };
 
+  const add = (type) => () => {
+    if (type === "hours") {
+      time += 5 * 60 * 60;
+    }
+    if (type === "min") {
+      time += 5 * 60;
+    }
+    if (type === "sec") {
+      time += 5;
+    }
+    updatePomodoro();
+  };
 
-  addButton.addEventListener('click', add);
-  removeButton.addEventListener('click', substract);
-  startButton.addEventListener('click', start);
+  const subs = (type) => () => {
+    if (type === "hours") {
+      time -= 5 * 60 * 60;
+    }
+    if (type === "min") {
+      time -= 5 * 60;
+    }
+    if (type === "sec") {
+      time -= 5;
+    }
+    updatePomodoro();
+  };
 
-})
+  startButton.addEventListener("click", startCount);
+
+  addButtonHour.addEventListener("click", add("hours"));
+  addButtonMin.addEventListener("click", add("min"));
+  addButtonSec.addEventListener("click", add("sec"));
+
+  removeButtonHour.addEventListener("click", subs("hours"));
+  removeButtonMin.addEventListener("click", subs("min"));
+  removeButtonSec.addEventListener("click", subs("sec"));
+});
