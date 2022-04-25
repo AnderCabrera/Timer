@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetButton = document.querySelector(".main__button-reset");
   const stopButton = document.querySelector(".main__button-stop");
 
+  // commit
   let time = 0;
   let timer;
 
