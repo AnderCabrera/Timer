@@ -21,17 +21,47 @@ document.addEventListener("DOMContentLoaded", () => {
     mainH2.textContent = `${hours}:${min}:${sec}`;
   };
 
+  ////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////
+
   const startCount = () => {
-    if (timer) clearInterval(timer);
-    timer = setInterval(() => {
-      updatePomodoro();
-      if (time === 0) clearInterval(timer);
+    startButton.firstElementChild.textContent = "Start";
 
-      time -= 1;
-    }, 1000);
+    if (time) {
+      if (timer) clearInterval(timer);
+      startButton.disabled = true;
 
-    return timer;
+      const tick = () => {
+        if (time <= 0) {
+          clearInterval(timer);
+          time = 0;
+        }
+        updatePomodoro();
+        if (time > 0) time -= 1;
+      };
+
+      tick();
+      timer = setInterval(tick, 1000);
+
+      return timer;
+    }
   };
+
+  const stopCount = () => {
+    startButton.disabled = false;
+    if (timer) clearInterval(timer);
+    startButton.firstElementChild.textContent = "Continue";
+  };
+
+  const resetCount = () => {
+    startButton.disabled = false;
+    if (timer) clearInterval(timer);
+    time = 0;
+    updatePomodoro();
+  };
+
+  ////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////
 
   const add = (type) => () => {
     if (type === "hours") {
@@ -49,17 +79,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const subs = (type) => () => {
     if (type === "hours") {
       time -= 5 * 60 * 60;
+      if (time <= 0) resetCount();
     }
     if (type === "min") {
       time -= 5 * 60;
+      if (time <= 0) resetCount();
     }
     if (type === "sec") {
       time -= 5;
+      if (time <= 0) resetCount();
     }
     updatePomodoro();
   };
 
   startButton.addEventListener("click", startCount);
+  stopButton.addEventListener("click", stopCount);
+  resetButton.addEventListener("click", resetCount);
 
   addButtonHour.addEventListener("click", add("hours"));
   addButtonMin.addEventListener("click", add("min"));

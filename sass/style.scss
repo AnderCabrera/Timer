@@ -55,11 +55,12 @@ body {
 
 .main__h2 {
   width: 10ch;
+  font-size: 10 rem;
 }
 
 .main__button-addHour {
   position: relative;
-  top: 3rem;
+  top: -1rem;
   left: 25vw;
 }
 
@@ -71,7 +72,7 @@ body {
 
 .main__button-addMin {
   position: relative;
-  top: 3rem;
+  top: -1rem;
   left: 25vw;
 }
 
@@ -83,7 +84,7 @@ body {
 
 .main__button-addSec {
   position: relative;
-  top: 3rem;
+  top: -1rem;
   left: 25vw;
 }
 
@@ -96,23 +97,24 @@ body {
 .main__button-start,
 .main__button-reset,
 .main__button-stop {
-  width: 7ch;
+  width: 12ch;
 }
 
 .main__button-reset {
   position: relative;
-  bottom: 1.7rem;
-  right: 11.5vw;
+  bottom: 1.65rem;
+  right: 20vw;
 }
 
 .main__button-stop {
   position: relative;
   bottom: 3.3rem;
-  left: 11.5vw;
+  left: 20vw;
 }
 
 .button:disabled {
   background: #8293f8;
+  // background: black;
 }
 
 // .button::after {
