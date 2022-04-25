@@ -18,13 +18,37 @@
   <body>
     <header class="header">
       <h1 class="header__h1">Basic timer</h1>
+      <img
+        src="img/dropdown.png"
+        alt="dropdown menu icon"
+        id="drop-down-menu"
+        class="aside__img"
+      />
     </header>
+    <aside id="aside" class="aside">
+      
+    </aside>
     <main class="main">
-      <button id="main__button-1" type="button" class="button main__button-1"><span>+5</span></button>
       <h2 id="main__h2" class="main__h2"></h2>
-      <button id="main__button-2" type="button" class="button main__button-2"><span>-5</span></button>
-      <button id="main__button-3" class="button main__button-3"><span>Start</span></button>
-      <button id="main__button-4" class="button main__button-3"><span>Pause</span></button>
+      <button id="main__button-1" type="button" class="button main__add-button">
+        +5
+      </button>
+      <button
+        id="main__button-2"
+        type="button"
+        class="button main__substract-button"
+      >
+        -5
+      </button>
+      <button id="main__button-3" class="button main__start-button">
+        Start
+      </button>
+      <button id="main__button-4" class="button main__pause-button">
+        Pause
+      </button>
+      <button id="main__button-5" class="button main__reset-button">
+        Reset
+      </button>
     </main>
     <footer class="footer">
       <h1 class="footer__authors-h1">Authors</h1>
@@ -38,11 +62,11 @@
             alt="github-logo"
         /></a>
         <a href="#"
-            ><img
-              class="footer__img-1"
-              src="img/Twitter-logo.svg"
-              alt="twitter-logo"
-          /></a>
+          ><img
+            class="footer__img-1"
+            src="img/Twitter-logo.svg"
+            alt="twitter-logo"
+        /></a>
       </div>
       <div class="footer__joao-container">
         <h2 class="footer__joao-header">Joao</h2>
@@ -53,14 +77,13 @@
             alt="github-logo"
         /></a>
         <a href="#"
-            ><img
-              class="footer__img-2"
-              src="img/Twitter-logo.svg"
-              alt="twitter-logo"
-          /></a>
+          ><img
+            class="footer__img-2"
+            src="img/Twitter-logo.svg"
+            alt="twitter-logo"
+        /></a>
       </div>
     </footer>
   </body>
-  <script src="js/main.js">
-  </script>
+  <script src="js/main.js"></script>
 </html>

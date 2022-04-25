@@ -25,47 +25,64 @@ body {
 }
 
 /* ------------------- */
+/* Aside */
+/* -------------------*/
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aside__img {
+  position: absolute;
+  left: 1em;
+  width: 4em;  
+  filter: invert(100%) sepia(0%) saturate(7487%) hue-rotate(268deg) brightness(117%) contrast(103%);
+}
+
+/* ------------------- */
 /* Main */
 /* -------------------*/
 
-.button {
-  display: inline-flex;
-  align-items: center;
+.main {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button {
   background: #141414;
   color: #fff;
   font-size: 20px;
-  font-weight: 500;
   border: none;
   cursor: pointer;
-  text-transform: uppercase;
-  transition: .3s ease all;
-  border-radius: 2px;
-  position: relative;
-  overflow: hidden;
+  text-transform: capitalize;
+  transition: .5s;
+  border-radius: 3px;
   margin-top: 12px;
 }
 
 .main__h2,
 .button {
-  display: block;
   width: 125px;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 60px;
   text-align: center;
 }
 
-.main__button-1 {
-  position: relative;
-  top: 6rem;
-  left: 25vw
+.main__add-button {
+  position: absolute;
+  right: 25%;
+  top: 30%;
 }
 
-.main__button-2 {
-  position: relative;
-  bottom: 3rem;
-  right: 25vw;
+.main__substract-button {
+  position: absolute;
+  left: 25%;
+  top: 30%;
 }
 
 .button:disabled {
@@ -75,23 +92,6 @@ body {
 .main__h2 {
   padding: 5px;
 }
-
-// .button::after {
-//   content: "";
-//   width: 100%;
-//   position: absolute;
-//   z-index: 1;
-//   top: 0;
-//   left: calc(-100% - 80px);
-//   border-bottom: 80px solid #286cff;
-//   border-right: 80px solid transparent;
-//   transition: .4s ease-in-out all;
-// }
-
-// .button:hover::after {
-//   left: 0;
-// }
-
 
 /* ------------------- */
 /* footer */
