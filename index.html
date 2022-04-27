@@ -17,38 +17,54 @@
 
   <body>
     <header class="header">
-      <h1 class="header__h1">Basic timer</h1>
       <img
         src="img/dropdown.png"
         alt="dropdown menu icon"
         id="drop-down-menu"
         class="aside__img"
       />
+      <h1 class="header__h1">Basic timer</h1>
     </header>
-    <aside id="aside" class="aside">
-      
-    </aside>
+    <aside id="aside" class="aside"></aside>
     <main class="main">
-      <h2 id="main__h2" class="main__h2"></h2>
-      <button id="main__button-1" type="button" class="button main__add-button">
-        +5
-      </button>
-      <button
-        id="main__button-2"
-        type="button"
-        class="button main__substract-button"
-      >
-        -5
-      </button>
-      <button id="main__button-3" class="button main__start-button">
-        Start
-      </button>
-      <button id="main__button-4" class="button main__pause-button">
-        Pause
-      </button>
-      <button id="main__button-5" class="button main__reset-button">
-        Reset
-      </button>
+      <div class="main__date-countdown-container">
+        <div class="main__days-container">
+          <h2>days</h2>
+          <h2 id="day">1</h2> 
+          <p>:</p>
+          <div class="main__buttons">
+            <button type="button" class="button main__substract-button">-</button>
+            <button type="button" class="button main__sum-button">+</button>
+        </div>
+        </div>
+        <div class="main__hours-container">
+          <h2>hours</h2>
+          <h2 id="hour">0</h2>
+          <p>:</p>
+          <div class="main__buttons">
+            <button type="button" class="button main__substract-button">-</button>
+            <button type="button" class="button main__sum-button">+</button>
+        </div>
+        </div>
+        <div class="main__minutes-container">
+          <h2>minutes</h2>
+          <h2 id="minute">0</h2>
+          <p>:</p>
+          <div class="main__buttons">
+            <button type="button" class="button main__substract-button">-</button>
+            <button type="button" class="button main__sum-button">+</button>
+        </div>
+        </div>
+        <div class="main__seconds-container">
+          <h2>seconds</h2>
+          <h2 id="second">0</h2>
+          <div class="main__buttons">
+            <button type="button" class="button main__substract-button">-</button>
+            <button type="button" class="button main__sum-button">+</button>
+        </div>
+        </div>
+      </div>
+        
     </main>
     <footer class="footer">
       <h1 class="footer__authors-h1">Authors</h1>
