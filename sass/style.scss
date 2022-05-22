@@ -1,31 +1,30 @@
 $font: 'Poppins', sans-serif;
 $white-color: rgb(255, 255, 255);
-$purple-background: #2666CF;
-$gray-background: #2C3333;
+$bg-sky-blue: rgb(30, 82, 166);
+$bg-gray: #1D1F20;
 
 /* ------------------- */
 /* Global */
 /* -------------------*/
 
 body {
-  background-color: $purple-background;
+  background-color: $bg-sky-blue;
   font-family: $font;
 }
 
 .header {
-  background-color: $gray-background;
+  background-color: $bg-gray;
   padding: 25px;
 }
 
 .header__h1 {
   font-size: 30px;
-  font-weight: 200;
   color: $white-color;
   text-align: center;
 }
 
 /* ------------------- */
-/* Aside */
+/* Aside && header */
 /* -------------------*/
 
 .header {
@@ -33,13 +32,15 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: 1;
+  height: 6em;
 
   .header__h1 {
+    border: 1px solid #000;
     margin: 0 auto;
   }
 
   .aside__img {
-    width: 3em;  
+    width: 3em;
     filter: invert(100%) sepia(0%) saturate(7487%) hue-rotate(268deg) brightness(117%) contrast(103%);
   }
 }
@@ -50,23 +51,26 @@ body {
 /* -------------------*/
 
 .main__date-countdown-container {
-  height: 50vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.7em;
-  border: 1px solid black;
+  border: 1px solid rgb(236, 29, 29);
+
   * {
     text-align: center;
     flex-grow: .1;
+    color: white;
     position: relative;
+
     p {
       font-size: 1.5em;
       font-weight: bold;
       position: absolute;
       top: 30%;
-      right: -15%;
+      right: -9%;
     }
   }
 }
@@ -76,6 +80,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: .7em;
+  margin-top: 1em;
 }
 
 .button {
@@ -86,99 +91,80 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: $gray-background;
+  background-color: $bg-gray;
   color: white;
 }
-
 
 /* ------------------- */
 /* footer */
 /* -------------------*/
 
 .footer {
-  background-color: $gray-background;
+  background-color: $bg-gray;
   width: 100%;
-  height: 15.75em;
-  bottom: 0;
-  position: relative;
 }
 
-.footer__authors-h1 {
-  display: flex;
-  justify-content: center;
-  color: $white-color;
-  padding: 12px;
-  font-weight: 100;
-  font-size: 1.8em;
-}
-
-.footer__border {
-  position: relative;
-  width: 70%;
-  margin: 0 auto;
-  border-bottom: #fff 2px solid;
-  bottom: 20px;
-}
-
-/* ------------------- */
-/* footer mixins */
-/* -------------------*/
-
+// footer mixins
 @mixin logo-sizes {
   width: 4.2em;
   height: 4.2em;
-} 
+}
 
-@mixin footer-container {
+// Footer styles
+.footer__authors-h1 {
   display: flex;
   justify-content: center;
-  width: 45%;
-  padding: 3em;
-  position: absolute;
-  top: 4.5em;
+  margin-top: 0em;
+  padding: 1em;
+  color: white;
+  border: 1px solid #000;
 }
 
-/* ------------------- */
-/* footer containers styles */
-/* -------------------*/
+.footer__authors-container {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+  color: white;
+  padding: 1em;
+}
 
+// footer Ander styles
 .footer__ander-container {
-  @include footer-container;
-  bottom: 0;
-  .footer__ander-header {
-    color: $white-color;
-    font-size: 1.4em;
+  flex-grow: .07;
+
+  .ander-header {
+    text-align: center;
     font-weight: 100;
-    position: absolute;
-    top: 0;
   }
-  
-  .footer__img-1 {
-    @include logo-sizes;
-    position: relative;
-    top: 15px;
-    margin-left: 10px;
+
+  .footer__img-containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .4em;
   }
 }
 
+// footer Joao styles
 .footer__joao-container {
-  @include footer-container;
-  bottom: 0;
-  right: 0;
-
-  .footer__joao-header {
-    color: $white-color;
-    font-size: 1.4em;
+  flex-grow: .07;
+  
+  .joao-header {
+    text-align: center;
     font-weight: 100;
-    position: absolute;
-    top: 0;
   }
   
-  .footer__img-2 {
-    @include logo-sizes;
-    position: relative;
-    top: 15px;
-    margin-left: 10px;
+  .footer__img-containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .4em;
   }
 }
 
+footer img {
+  @include logo-sizes;
+}
