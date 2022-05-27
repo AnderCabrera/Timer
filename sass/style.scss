@@ -50,14 +50,22 @@ body {
 /* Main */
 /* -------------------*/
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
 .main__date-countdown-container {
-  height: 100vh;
+  height: 60%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.7em;
-  border: 1px solid rgb(236, 29, 29);
 
   * {
     text-align: center;
@@ -93,6 +101,31 @@ body {
   cursor: pointer;
   background-color: $bg-gray;
   color: white;
+  transition: .5s;
+
+  &:disabled {
+    opacity: 0.7;
+  }
+}
+
+.main__principal-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7em;
+  width: 25%; //90% to media queries
+  padding: 1em;
+  
+  .button {
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 850px) {
+  .main__principal-buttons {
+    margin-top: 2em;
+    width: 88%;
+  }
 }
 
 /* ------------------- */
@@ -115,9 +148,9 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 0em;
-  padding: 1em;
+  padding: 1em 0em 0em 0em;
   color: white;
-  border: 1px solid #000;
+  border: 1px solids #000;
 }
 
 .footer__authors-container {

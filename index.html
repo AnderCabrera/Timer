@@ -25,57 +25,53 @@
   <!-- Main -->
   <main class="main">
     <div class="main__date-countdown-container">
+      <!-- * Days -->
       <div class="main__days-container">
         <h2>days</h2>
-        <h2 id="day">1</h2>
+        <h2 id="day">0</h2>
         <p>:</p>
         <div class="main__buttons">
-          <button type="button" class="button main__substract-button">-</button>
-          <button type="button" class="button main__sum-button">+</button>
+          <button type="button" class="button main__substract-button" id="substractDaysBtn">-</button>
+          <button type="button" class="button main__sum-button" id="sumDaysBtn">+</button>
         </div>
       </div>
+      <!-- * Hours -->
       <div class="main__hours-container">
         <h2>hours</h2>
         <h2 id="hour">0</h2>
         <p>:</p>
         <div class="main__buttons">
-          <button type="button" class="button main__substract-button">
-            -
-          </button>
-          <button type="button" class="button main__sum-button">+</button>
+          <button type="button" class="button main__substract-button" id="substractHoursBtn">-</button>
+          <button type="button" class="button main__sum-button" id="sumHoursBtn">+</button>
         </div>
       </div>
+      <!-- * Minutes -->
       <div class="main__minutes-container">
         <h2>minutes</h2>
         <h2 id="minute">0</h2>
         <p>:</p>
         <div class="main__buttons">
-          <button type="button" class="button main__substract-button">
-            -
-          </button>
-          <button type="button" class="button main__sum-button">+</button>
+          <button type="button" class="button main__substract-button" id="substractMinutesBtn">-</button>
+          <button type="button" class="button main__sum-button" id="sumMinutesBtn">+</button>
         </div>
       </div>
+      <!-- * Seconds -->
       <div class="main__seconds-container">
         <h2>seconds</h2>
         <h2 id="second">0</h2>
         <div class="main__buttons">
-          <button type="button" class="button main__substract-button">
-            -
-          </button>
-          <button type="button" class="button main__sum-button">+</button>
+          <button type="button" class="button main__substract-button" id="substractSecondsBtn">-</button>
+          <button type="button" class="button main__sum-button" id="sumSecondsBtn">+</button>
         </div>
       </div>
-      <!-- * Buttons (Start, pause, resume, reset) -->
-      <!-- TODO: Move this to the bottom  -->
-      <div class="main__principal-buttons">
-        <button id="startButton" type="button" class="button">Start</button>
-        <button id="startButton" type="button" class="button">Stop</button>
-        <button id="startButton" type="button" class="button">Resume</button>
-        <button id="startButton" type="button" class="button">Reset</button>
-      </div>
     </div>
-
+    <!-- * Buttons (Start, pause, resume, reset) -->
+    <!-- TODO: Move this to the bottom  -->
+    <div class="main__principal-buttons">
+      <button id="startButton" type="button" class="button">Start</button>
+      <button id="stopButton" type="button" class="button">Stop</button>
+      <button id="resetButton" type="button" class="button">Reset</button>
+    </div>
   </main>
 
   <!-- Footer -->
