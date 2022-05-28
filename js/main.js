@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (type === 'hours') time += 1 * (1000 * 60 * 60);
         if (type === 'minutes') time += 5 * (1000 * 60);
         if (type === 'seconds') time += 10 * (1000);
-
         updateTime();
     }
 
@@ -52,7 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (type === 'hours') time -= 1 * (1000 * 60 * 60);
         if (type === 'minutes') time -= 1 * (1000 * 60);
         if (type === 'seconds') time -= 5 * (1000);
-        if (time <= 0) {
+        if (time < 0) {
+            swal('Number cannot be negative!', '', 'error');
             time = 0;
             updateTime();
         }
@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
             buttons[i].disabled = false;
         }
     }
-    
+
     function unshowButtons() {
-            for (let i = 0; i < 8; i++) {
-                buttons[i].disabled = true;
+        for (let i = 0; i < 8; i++) {
+            buttons[i].disabled = true;
         }
     }
 
@@ -119,4 +119,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // * Displaying the seconds
     sumSeconds.onclick = () => addTime('seconds');
     substractSeconds.onclick = () => substractTime('seconds');
-})
+});
